@@ -31,6 +31,6 @@ function update() {
     furryCountdown.innerText = formatDuration(getTimeToAtticusFurry());
 }
 
-setInterval(update, 1);
+setTimeout(update, 1);
 clearInterval(update);
-setInterval(update, 500);
+setInterval(update, 1000);
