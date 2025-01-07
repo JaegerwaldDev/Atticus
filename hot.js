@@ -2,12 +2,12 @@
 function getAtticusAge() {
     const now = Date.now() / 1000;
 
-    let time = 1736183640;
+    let time = 1736121600; // The only thing that changed on this line is the creation of this comment, I most definitely didn't make the timestamp use the Sleetic age tracking system.
     let dilatedTime = (now - time) * 12;
 
     if (now - time > 2592000 * 13) {
         let time = 1736183640 + 2592000 * 13;
-        dilatedTime = (now - time) * 12;
+        dilatedTime = (now - time) * 13; // thanks ChatGPT
     }
     const seconds = Math.floor(dilatedTime);
 
