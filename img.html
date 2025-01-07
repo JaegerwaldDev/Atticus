@@ -10,6 +10,37 @@
             display: grid;
             grid-template-columns: 64px auto !important;
         }
+
+        img {
+            border-radius: 8px;
+            user-select: none;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .photo {
+            border-top: 1px var(--clr-dark-3) solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 0px;
+        }
+        .photo::after {
+            display: block;
+            content: "";
+            border-radius: 4px;
+            height: 8px;
+            width: 64px;
+            background-color: var(--clr-dark-3);
+            justify-self: flex-end;
+            transform: translateY(-12px);
+        }
+
+        i {
+            color: var(--clr-light-6);
+        }
+        p {
+            width: 100%;
+        }
     </style>
 
     <meta content="The Atticus Dictionary" property="og:title">
@@ -20,8 +51,8 @@
 </head>
 <body>
     <main class="f">
-        <span class="icon i-book-2"></span>
-        <h1>The Atticus Dictionary</h1>
+        <span class="icon i-photo"></span>
+        <h1>The Gallery of Atticus</h1>
     </main>
     <a href="./"><div class="icon-box link">
         <span class="icon i-arrow-left"></span>
@@ -31,14 +62,15 @@
         </span>
     </div></a>
     <div class="icon-box">
-        <span class="icon i-book-2"></span>
+        <span class="icon i-photo"></span>
         <span class="title">About</span>
         <span class="content">
-            <p>This is a list of all words spoken by Atticus, updated by the community. (<a href="https://github.com/JaegerwaldDev/Atticus/blob/main/dict.json">Contribute</a>)</p>
+            <p>Art is supplied by the community! Message us in Datapack Hub to get your's added.</p>
         </span>
     </div>
-    <div id="dictionary">
+    <div class="photo">
+        <img src="assets/gallery/family_photo.png" draggable="false">
+        <p>Family Photo <i class="r">by Anonymous</i></p>
     </div>
-    <script src="dict.js"></script>
 </body>
 </html>

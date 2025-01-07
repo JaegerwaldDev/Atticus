@@ -17,11 +17,16 @@ async function main () {
         if (word[0] == "#") {
             wordElement.className = "firstWord";
             word = word.replace("#","");
+        } else if (word[0] == "+") {
+            wordElement.className = "witnessed";
+            word = word.replace("+","");
         }
         wordElement.textContent = word.split("|")[0];
         element.appendChild(wordElement);
 
-        element.innerHTML += ` - <a href="${word.split("|")[1]}">Original message</a>`;
+        if (word.split("|").length > 1) {
+            element.innerHTML += ` - <a href="${word.split("|")[1]}">Original message</a>`;
+        }
 
         document.getElementById("dictionary").appendChild(element);
     });

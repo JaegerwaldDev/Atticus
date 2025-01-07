@@ -58,6 +58,10 @@ body {
     gap: 16px;
 }
 
+*::selection {
+    background-color: var(--clr-accent-2);
+}
+
 img {
     user-select: none;
 }
@@ -67,6 +71,7 @@ img {
 }
 .r {
     text-align: right;
+    float: right;
 }
 .f {
     display: flex;
@@ -96,7 +101,8 @@ p:nth-last-child(1) {
 .icon-box,
 table,
 #countdowns,
-#parents {
+#parents,
+.photo {
     padding: 16px;
     border: 1px var(--clr-dark-3) solid;
     background: var(--clr-dark-2);
@@ -232,7 +238,8 @@ a:has(.icon-box.link) {
 }
 
 #countdowns,
-#parents {
+#parents,
+.photo {
     width: calc(100% - 34px);
 }
 .countdown {
@@ -272,6 +279,21 @@ a:has(.icon-box.link) {
     color: var(--clr-accent);
     content: " (First Word)";
 }
+.witnessed::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url("assets/eye.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    transform: translateY(2px);
+    margin-right: 4px;
+}
+.witnessed::after {
+    color: var(--clr-dark-8);
+    content: " (Witnessed)";
+}
 
 /* #region */ /* Icons */
 
@@ -286,4 +308,7 @@ a:has(.icon-box.link) {
 }
 .i-arrow-left::after {
     background-image: url("assets/arrow-left.svg");
+}
+.i-photo::after {
+    background-image: url("assets/photo.svg");
 }
