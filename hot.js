@@ -1,7 +1,10 @@
+// thanks copilot
 function getAtticusAge() {
     const now = Date.now() / 1000;
+
     let time = 1736183640;
     let dilatedTime = (now - time) * 12;
+
     if (now - time > 2592000 * 13) {
         let time = 1736183640 + 2592000 * 13;
         dilatedTime = (now - time) * 12;
@@ -27,59 +30,60 @@ function getAtticusAge() {
     return "0s";
 }
 
+// thanks copilot
 function getTimeToAtticusBirthday() {
     const now = new Date();
-    const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth();
-    const currentDay = now.getDate();
 
-    // Determine the next birthday date
-    let birthday;
-    if (currentDay > 6) {
-        // If today is past the 6th, set to the 6th of next month
-        birthday = new Date(currentYear, currentMonth + 1, 6);
-    } else {
-        // Otherwise, set to the 6th of this month
-        birthday = new Date(currentYear, currentMonth, 6);
+    let year = now.getUTCFullYear();
+    let month = now.getUTCMonth();
+
+    if (
+        now.getUTCDate() > 6 ||
+        (now.getUTCDate() === 6 &&
+            now.getUTCHours() >= 17 &&
+            now.getUTCMinutes() >= 14)
+    ) {
+        month += 1;
+        if (month > 11) {
+            month = 0;
+            year += 1;
+        }
     }
 
-    // Calculate the time difference in seconds
-    const timeDifference = (birthday - now) / 1000;
+    const nextSixth = new Date(Date.UTC(year, month, 6, 17, 14, 0, 0));
+    const timeDifference = nextSixth.getTime() - now.getTime();
 
-    return Math.round(timeDifference);
+    console.log(nextSixth);
+
+    return Math.floor(timeDifference / 1000);
 }
 
+// thanks copilot
 function getTimeToAtticusFurry() {
-    const now = Date.now() / 1000;
+    const now = new Date();
 
-    const currentYear = now % 31536000;
+    const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 1);
+    const secondsSinceStartOfYear = (now.getTime() - startOfYear) / 1000;
 
-    return Math.round(31536000 - currentYear - 2592000);
+    return Math.round(31536000 - secondsSinceStartOfYear - 2592000);
 }
 
-// thanks gpt
+// thanks copilot
 function formatDuration(seconds) {
     const pad = (value) => value.toString().padStart(2, "0");
 
-    // Start from the Unix epoch (January 1, 1970)
-    const baseDate = new Date(0);
-    const targetDate = new Date(seconds * 1000);
+    const years = Math.floor(seconds / 31536000);
+    seconds %= 31536000;
+    const months = Math.floor(seconds / 2592000);
+    seconds %= 2592000;
+    const days = Math.floor(seconds / 86400);
+    seconds %= 86400;
+    const hours = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
 
-    // Calculate the difference in months, days, etc.
-    let months = targetDate.getUTCMonth() - baseDate.getUTCMonth();
-    let years = targetDate.getUTCFullYear() - baseDate.getUTCFullYear();
-    if (months < 0) {
-        months += 12;
-        years -= 1;
-    }
-
-    const days = targetDate.getUTCDate() - 1; // Days start from 1, so subtract 1
-    const hours = targetDate.getUTCHours();
-    const minutes = targetDate.getUTCMinutes();
-    const secs = targetDate.getUTCSeconds();
-
-    // Convert total months (include years)
-    months += years * 12;
-
-    return `${pad(months)}:${pad(days)}:${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
+    return `${pad(years * 12 + months)}:${pad(days)}:${pad(hours)}:${pad(
+        minutes
+    )}:${pad(secs)}`;
 }
