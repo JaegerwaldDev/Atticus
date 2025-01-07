@@ -104,8 +104,7 @@ p:nth-last-child(1) {
 
 .icon-box,
 table,
-#countdowns,
-#parents,
+.panel,
 .photo {
     padding: 16px;
     border: 1px var(--clr-dark-3) solid;
@@ -182,6 +181,13 @@ main h1 {
     font-size: 32px;
     line-height: 2;
 }
+main h3 {
+    font-size: 20px;
+    line-height: 2;
+    font-weight: normal;
+    line-height: 3.5;
+    color: var(--clr-light-6);
+}
 
 aside {
     display: flex;
@@ -241,8 +247,7 @@ a:has(.icon-box.link) {
     width: 208px; /* me when i evil */
 }
 
-#countdowns,
-#parents,
+.panel,
 .photo {
     width: calc(100% - 34px);
 }
