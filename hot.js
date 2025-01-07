@@ -53,8 +53,6 @@ function getTimeToAtticusBirthday() {
     const nextSixth = new Date(Date.UTC(year, month, 6, 17, 14, 0, 0));
     const timeDifference = nextSixth.getTime() - now.getTime();
 
-    console.log(nextSixth);
-
     return Math.floor(timeDifference / 1000);
 }
 
