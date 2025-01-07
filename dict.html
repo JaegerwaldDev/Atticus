@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atticus Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .icon-box {
+            display: grid;
+            grid-template-columns: 64px auto !important;
+        }
+    </style>
+    <link rel="preload" href="assets/book-2.svg" as="image" type="image/svg">
+    <link rel="preload" href="assets/arrow-left.svg" as="image" type="image/svg">
+</head>
+<body>
+    <main class="f">
+        <span class="icon i-book-2"></span>
+        <p><h1>The Atticus Dictionary</h1></p>
+    </main>
+    <a href="./"><div class="icon-box link">
+        <span class="icon i-arrow-left"></span>
+        <span class="title">Back</span>
+        <span class="content">
+            <p>Return to main site.</p>
+        </span>
+    </div></a>
+    <div class="icon-box">
+        <span class="icon i-book-2"></span>
+        <span class="title">About</span>
+        <span class="content">
+            <p>This is a list of all words spoken by Atticus, updated by the community. (<a href="https://github.com/JaegerwaldDev/Atticus/blob/main/dict.json">Contribute</a>)</p>
+        </span>
+    </div>
+    <div id="dictionary">
+    </div>
+    <script src="dict.js"></script>
+</body>
+</html>

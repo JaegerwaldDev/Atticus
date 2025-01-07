@@ -79,6 +79,9 @@ p {
     margin: 0px;
     margin-bottom: 16px;
 }
+p:nth-last-child(1) {
+    margin: 0px;
+}
 
 .icon-box,
 table,
@@ -184,6 +187,8 @@ aside {
     grid-template-columns: 64px auto 64px;
     cursor: pointer;
     user-select: none;
+    color: var(--clr-light-2);
+    height: calc(100% - 35px);
 }
 .icon-box.link:hover {
     filter: brightness(1.25);
@@ -192,6 +197,14 @@ aside {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column: 3;
+}
+.icon-box.link > .title {
+    display: inline;
+    align-self: flex-end;
+}
+
+a:has(.icon-box.link) {
+    text-decoration: none;
 }
 
 #countdowns {
@@ -204,6 +217,38 @@ aside {
     font-weight: bold;
 }
 
+
+/* #region *//* Dictionary */
+/* this doesnt include overrides*/
+
+#dictionary {
+    padding: 16px;
+    width: calc(100% - 34px);
+    display: flex;
+    flex-direction: column;
+    border: 1px var(--clr-dark-3) solid;
+    background: var(--clr-dark-2);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-radius: 16px;
+}
+
+.firstWord::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url("assets/sparkles.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    transform: translateY(2px);
+    margin-right: 4px;
+}
+.firstWord::after {
+    color: var(--clr-accent);
+    content: " (First Word)";
+}
+
 /* #region *//* Icons */
 
 .i-book-2::after {
@@ -214,4 +259,7 @@ aside {
 }
 .i-arrow-right::after {
     background-image: url("assets/arrow-right.svg");
+}
+.i-arrow-left::after {
+    background-image: url("assets/arrow-left.svg");
 }

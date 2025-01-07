@@ -7,3 +7,24 @@ async function getJson(url) {
     });
     return result;
 };
+
+async function main () {
+    let dict = await getJson("dict.json");
+    dict.forEach(word => {
+        let element = document.createElement("p");
+
+        let wordElement = document.createElement("span");
+        if (word[0] == "#") {
+            wordElement.className = "firstWord";
+            word = word.replace("#","");
+        }
+        wordElement.textContent = word.split("|")[0];
+        element.appendChild(wordElement);
+
+        element.innerHTML += ` - <a href="${word.split("|")[1]}">Original message</a>`;
+
+        document.getElementById("dictionary").appendChild(element);
+    });
+}
+
+main();
