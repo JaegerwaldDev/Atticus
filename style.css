@@ -58,6 +58,10 @@ body {
     gap: 16px;
 }
 
+img {
+    user-select: none;
+}
+
 .c {
     text-align: center;
 }
@@ -91,7 +95,8 @@ p:nth-last-child(1) {
 
 .icon-box,
 table,
-#countdowns {
+#countdowns,
+#parents {
     padding: 16px;
     border: 1px var(--clr-dark-3) solid;
     background: var(--clr-dark-2);
@@ -213,7 +218,21 @@ a:has(.icon-box.link) {
     text-decoration: none;
 }
 
-#countdowns {
+#parents img {
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+#parents p.f {
+    margin-left: auto;
+    margin-right: auto;
+    gap: 16px;
+    width: 208px; /* me when i evil */
+}
+
+#countdowns,
+#parents {
     width: calc(100% - 34px);
 }
 .countdown {
