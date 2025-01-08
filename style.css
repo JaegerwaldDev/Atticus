@@ -253,13 +253,17 @@ a:has(.icon-box.link) {
     border-radius: 50%;
     margin-bottom: 8px;
 }
+
 #babysitters p.f {
+    margin-left: auto;
+    margin-right: auto;
+    gap: 16px;
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    width: fit-content;
-    margin: auto;
+    flex-direction: column;
+    text-align: center;
 }
 
 .panel,
