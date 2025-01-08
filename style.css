@@ -120,7 +120,7 @@ table,
     grid-template-columns: 64px auto;
     grid-template-columns: auto auto;
     column-gap: 16px;
-    width: calc(100% - 34px); /* ~~short for calculator~~ */
+    width: calc(100% - 34px);
 }
 .icon-box > .icon {
     grid-column: 1;
@@ -215,7 +215,7 @@ aside {
     cursor: pointer;
     user-select: none;
     color: var(--clr-light-2);
-    height: calc(100% - 35px); /* ~~short for calculator~~ */
+    height: calc(100% - 35px);
 }
 .icon-box.link:hover {
     filter: brightness(1.25);
@@ -247,7 +247,6 @@ a:has(.icon-box.link) {
     width: 208px; /* me when i evil */
 }
 
-/* Too lazy to see what the above CSS does so copy-pasting it */
 #babysitters img {
     height: 96px;
     width: 96px;
@@ -263,7 +262,7 @@ a:has(.icon-box.link) {
 
 .panel,
 .photo {
-    width: calc(100% - 34px); /* ~~short for calculator~~ */
+    width: calc(100% - 34px);
 }
 .countdown {
     font-size: 48px;
@@ -277,7 +276,7 @@ a:has(.icon-box.link) {
 
 #dictionary {
     padding: 16px;
-    width: calc(100% - 34px); /* ~~short for calculator~~ */
+    width: calc(100% - 34px);
     display: flex;
     flex-direction: column;
     border: 1px var(--clr-dark-3) solid;
