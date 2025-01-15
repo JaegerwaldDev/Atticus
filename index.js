@@ -9,7 +9,6 @@ async function getJson(url) {
 };
 
 let knownWords = document.getElementById("knownWords");
-let atticusAge = document.getElementById("atticusAge");
 let colonThrees = document.getElementById("colonThrees");
 let stats = {words:"-",colon_threes:"-"};
 let dict = [];
