@@ -13,9 +13,6 @@ let colonThrees = document.getElementById("colonThrees");
 let stats = {words:"-",colon_threes:"-"};
 let dict = [];
 
-let bdayCountdown = document.getElementById("bdayCountdown");
-let furryCountdown = document.getElementById("furryCountdown");
-
 async function getStats() {
     stats = await getJson("stats.json");
     dict = await getJson("dict.json");
@@ -33,11 +30,7 @@ function update() {
     getStats();
 
     knownWords.innerText = getWords();
-    atticusAge.innerText = getAtticusAge();
     colonThrees.innerText = stats.colon_threes;
-
-    bdayCountdown.innerText = formatDuration(getTimeToAtticusBirthday());
-    furryCountdown.innerText = formatDuration(getTimeToAtticusFurry());
 }
 
 setTimeout(update, 1);
